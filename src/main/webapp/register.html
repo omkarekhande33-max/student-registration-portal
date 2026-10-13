@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Registration Portal - Create your student account">
+  <title>Student Registration | University Portal</title>
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Design System CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Ambient Light Effects -->
+  <div class="bg-ambient-wrapper">
+    <div class="ambient-orb-1"></div>
+    <div class="ambient-orb-2"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <div class="auth-card">
+      
+      <!-- Brand & Header -->
+      <div class="auth-header">
+        <div class="brand-badge">
+          <i class="bi bi-mortarboard-fill"></i>
+        </div>
+        <h1>Student Registration</h1>
+        <p>Create your university portal account</p>
+      </div>
+
+      <!-- Server / System Alerts Container -->
+      <div id="serverAlertContainer"></div>
+
+      <!-- Registration Form (PDF Step 3 & Step 6) -->
+      <form id="registerForm" action="RegisterServlet" method="POST" novalidate>
+        
+        <!-- Full Name Field -->
+        <div class="form-group-custom">
+          <label for="name" class="form-label-custom">Full Name</label>
+          <div class="input-container">
+            <i class="bi bi-person input-icon-left"></i>
+            <input 
+              type="text" 
+              class="form-control-custom" 
+              id="name" 
+              name="name" 
+              placeholder="e.g. John Doe"
+              autocomplete="name"
+              required>
+          </div>
+          <div id="nameError" class="error-feedback"></div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group-custom">
+          <label for="email" class="form-label-custom">Email Address</label>
+          <div class="input-container">
+            <i class="bi bi-envelope input-icon-left"></i>
+            <input 
+              type="email" 
+              class="form-control-custom" 
+              id="email" 
+              name="email" 
+              placeholder="e.g. student@university.edu"
+              autocomplete="email"
+              required>
+          </div>
+          <div id="emailError" class="error-feedback"></div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group-custom">
+          <label for="password" class="form-label-custom">Password</label>
+          <div class="input-container">
+            <i class="bi bi-lock input-icon-left"></i>
+            <input 
+              type="password" 
+              class="form-control-custom" 
+              id="password" 
+              name="password" 
+              placeholder="Minimum 6 characters"
+              autocomplete="new-password"
+              required>
+            <button type="button" class="btn-toggle-password" data-target="password" title="Show/Hide Password" aria-label="Toggle password visibility">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          
+          <!-- Password Strength Indicator -->
+          <div class="password-strength-wrapper">
+            <div class="strength-bar-bg">
+              <div id="strengthFill" class="strength-bar-fill"></div>
+            </div>
+            <div class="strength-label">
+              <span id="strengthText">Strength: None</span>
+              <span>Min. 6 chars</span>
+            </div>
+          </div>
+          
+          <div id="passwordError" class="error-feedback"></div>
+        </div>
+
+        <!-- Confirm Password Field -->
+        <div class="form-group-custom">
+          <label for="confirmPassword" class="form-label-custom">Confirm Password</label>
+          <div class="input-container">
+            <i class="bi bi-shield-check input-icon-left"></i>
+            <input 
+              type="password" 
+              class="form-control-custom" 
+              id="confirmPassword" 
+              placeholder="Re-enter your password"
+              autocomplete="new-password"
+              required>
+            <button type="button" class="btn-toggle-password" data-target="confirmPassword" title="Show/Hide Password" aria-label="Toggle password visibility">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <div id="confirmPasswordError" class="error-feedback"></div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="mt-4">
+          <button type="submit" id="registerBtn" class="btn-submit-custom">
+            <span>Register Account</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Footer Link to Login -->
+      <div class="auth-footer">
+        Already have an account? <a href="login.html" id="goToLoginLink">Sign In here</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Step 4: Client-Side Validation JavaScript -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

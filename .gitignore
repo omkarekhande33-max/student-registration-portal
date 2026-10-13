@@ -1,0 +1,19 @@
+# Target build directories
+target/
+build/
+bin/
+.metadata/
+
+# Compiled class files
+*.class
+
+# Temporary preview database
+database/*.db
+database/*.sqlite
+*.db
+*.sqlite
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+*.log
